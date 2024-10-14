@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To-do</h1>
+  
+    <div>
+      <p id="lista-titulo" name="lista">Lista de atividades:</p>
+    </div>
+  
+    <div>
+      <input placeholder="Digite aqui o item" />
+      <button>Adicionar</button>
+    </div>
+  
+    <ul id="lista-itens">
+      <li>item a</li>
+    </ul>
+  
+    <div>
+      <button>Remover último item</button>
+    </div>
+  </body>
+
+  <script>
+      let entrada = document.getElementsByTagName("input").item(0);
+    let lista = document.getElementById("lista-itens");
+
+    let botoes = document.getElementsByTagName("button");
+    let submeter = botoes.item(0);
+    let remover = botoes.item(1);
+
+      /* a)  Implementar funcionalidade de adicionar novo item à lista, de forma dinâmica, a partir do campo de <input> e botão de “adicionar” - 2,0
+        pontos */
+    submeter.addEventListener("click", ()=>{
+        if (entrada.value != ""){
+            /*ii) Necessário verificar como recuperar o conteúdo de um campo “input” */
+            let texto = document.createTextNode(entrada.value);
+            let novo_item = document.createElement("li");
+            novo_item.appendChild(texto);
+            lista.appendChild(novo_item);
+        }
+        else{
+            /* i) Considerar que não é permitido adicionar itens vazios, ou seja, com string vazia ' '. */
+            window.alert("Não é possível adicionar itens vazios")
+        }
+    });
+
+    /*b) Implementar funcionalidade de remover último item da lista, de forma
+    dinâmica, a partir do botão de “remover último item” - 2,0 pontos */
+    remover.addEventListener("click", ()=>{
+        if (lista.childElementCount >= 1){
+            let ultimo_filho = lista.lastElementChild;
+            lista.removeChild(ultimo_filho);    
+        }
+        else{
+            /*Considerar que essa funcionalidade só faz sentido caso haja pelo menos um (1) elemento presente na lista de itens.*/
+            window.alert("Lista de itens já está vazia!");
+        }
+    });
+  </script>
+</html>

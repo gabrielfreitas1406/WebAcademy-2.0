@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Várias listas</h1>
+  
+    <div>
+      <p id="lista-titulo" name="lista">Lista de itens:</p>
+    </div>
+  
+    <ul id="lista-itens-1">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+
+    <script>
+        //i) Imprima no console o primeiro e último filho da lista 1;
+        console.log("questão I");
+        let lista1 = document.getElementById("lista-itens-1");
+
+        let primeiro_filho = lista1.firstChild;
+        let ultimo_filho = lista1.lastChild;
+
+        console.log(primeiro_filho);
+        console.log(ultimo_filho);
+
+        //ii) Imprima no console o elemento HTML pai da lista 1;
+        console.log("questão II");
+        let pai_lista1 = lista1.parentNode;
+        console.log(pai_lista1);
+
+        //iii) Imprima no console todos os filhos da lista 1;
+        console.log("questão III");
+        let filhos_lista1 = lista1.childNodes;
+        for (i=0;  i<filhos_lista1.length; i++){
+          let filho = filhos_lista1[i];
+          console.log(filho);
+        }
+
+        //iv) Imprima no console os irmãos do item com id = 'two'
+        console.log("questão IV");
+        let two = filhos_lista1[3];
+
+        let irmao_anterior = two.previousSibling;
+        while (irmao_anterior != null){
+          console.log(irmao_anterior);
+          irmao_anterior = irmao_anterior.previousSibling;
+        }
+
+        console.log("irmao posterior");
+        let irmao_posterior = two.nextSibling;
+        while (irmao_posterior != null){
+          console.log(irmao_posterior);
+          irmao_posterior = irmao_posterior.nextSibling;
+        }
+    </script>
+  </body>
+</html>

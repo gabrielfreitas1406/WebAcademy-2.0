@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Várias listas</h1>
+  
+    <p id="lista-titulo" name="lista">Lista de itens:</p>
+  
+    <ul class="lista-itens-1">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-2">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-3">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-4">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  </body>
+  <script>
+
+    let conteudo_lista2 = document.getElementsByClassName("lista-itens-2")[0].querySelectorAll("li");
+    for(i=0; i<conteudo_lista2.length; i++){
+        console.log(conteudo_lista2[i]);
+    }
+
+    console.log("%%%%%%%%%%%%%%%%");
+    let hot = document.getElementsByClassName("lista-itens-2")[0].getElementsByClassName("hot");
+    
+    for(i=0; i<hot.length; i++){
+        console.log(hot[i]);
+    }
+  </script>
+</html>

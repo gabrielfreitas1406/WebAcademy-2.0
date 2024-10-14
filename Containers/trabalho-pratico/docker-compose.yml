@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: webacad-mysql
+    restart: always
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass2024
+      - MYSQL_DATABASE=livros_webacademy
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=senha_user
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - mysql_conf:/etc/mysql
+    networks:
+      - webacad_rede
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    restart: always
+    image: phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=pass2024
+    depends_on:
+      - mysql
+    networks:
+      - webacad_rede
+
+  backend:
+    container_name: livros-backend
+    restart: always
+    build: ./webacademy-livros-backend-main/
+    env_file:
+      - ./webacademy-livros-backend-main/.env
+    ports:
+      - 4444:4444
+    volumes:
+      - ./backend_logs:/app/log
+    depends_on:
+      - mysql
+    networks:
+      - webacad_rede
+
+  frontend:
+    container_name: livros-frontend
+    restart: always
+    build: ./webacademy-livros-frontend-main
+    ports:
+      - "8000:80"
+    environment:
+      - BACKEND_URL=http://backend:4444
+    depends_on:
+      - backend
+    networks:
+      - webacad_rede
+      
+networks:
+  webacad_rede:
+    driver: bridge
+
+volumes:
+  mysql_conf:
+  mysql_data:
+  backend_logs: 

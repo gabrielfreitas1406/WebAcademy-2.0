@@ -1,0 +1,10 @@
+COMANDOS PARA EXECUTAR O MYSQL PARA O MÓDULO DE API
+
+(sudo)
+
+docker run --name loja_banco -p4406:3306 -e MYSQL_ROOT_PASSWORD=senha123 -d mysql:8.0
+
+docker run --name loja_banco -p4406:3306 -e MYSQL_DATABASE=loja MYSQL_ROOT_PASSWORD=senha123 -d mysql:8.0
+
+mysql -uroot -psenha123 -P4406 -h127.0.0.1 loja
+

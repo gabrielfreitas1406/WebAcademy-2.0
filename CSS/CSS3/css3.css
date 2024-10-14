@@ -1,0 +1,23 @@
+body{
+    background-image: url(nebulosa.webp);
+    background-repeat: no-repeat;
+    background-size: 2500px 1500px;
+    padding-top: 250px;
+    padding-left: 250px;
+    
+}
+
+#texto{
+    
+    background-color: rgb(100,100,100,0.2);
+    width: 450px;
+    height: 750px;
+    border: 10px solid rgb(163, 129, 65);
+    color:white;
+    border-radius: 45px;
+    box-shadow: 4px 4px 10px 2px black;
+    padding: 20px 20px;
+    font-size: 38px;
+    text-align: center;
+}
+

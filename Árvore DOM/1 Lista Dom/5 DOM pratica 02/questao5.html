@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Várias listas</h1>
+  
+    <p id="lista-titulo" name="lista">Lista de itens:</p>
+  
+    <ul class="lista-itens-1">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-2">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-3">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+  
+    <ul class="lista-itens-4">
+      <li id="one" class="hot">item a</li>
+      <li id="two" class="hot">item b</li>
+      <li id="three" class="hot">item c</li>
+      <li id="four">item d</li>
+    </ul>
+    <script>
+        /* i) Percorra todos os itens da lista-itens-2 e altere o estilo de cor do
+        texto para orange; */
+        let lista_itens_2 = document.getElementsByClassName("lista-itens-2").item(0);
+        let lista_filhos_item2 = lista_itens_2.querySelectorAll("li");
+        for(i=0; i<lista_filhos_item2.length; i++){
+            let item = lista_filhos_item2.item(i);
+            item.style.setProperty("color","orange");
+        }
+
+        /* ii) Percorra todos os itens da lista-itens-2, remova a classe "hot", se
+        existir, e adicione uma nova classe "cold". Outra opção é percorrer os 
+        elementos e substituir diretamente a class "hot" por
+        "cold". */
+        for(i=0; i<lista_filhos_item2.length; i++){
+            let item = lista_filhos_item2.item(i);
+            if(item.hasAttribute("class")){
+                //console.log(item.className);
+                item.classList.replace("hot","cold");
+                //console.log(item.className);
+            }
+            else{
+                //console.log(item.className);
+                item.classList.add("cold");
+                //console.log(item.className);
+            }
+        }
+    </script>
+  </body>
+</html>

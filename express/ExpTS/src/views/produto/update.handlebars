@@ -1,0 +1,23 @@
+<h4>Atualização de produtos</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form action="/produto/update/{{produto.id}}" method="post">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" value="{{produto.nome}}" name="nome" placeholder="Celular Motorola Moto G5">
+                </div>
+                <div class="mb-3">
+                    <label for="preco" class="form-label">preco</label>
+                    <input type="text" class="form-control" id="preco" value="{{produto.preco}}" name="preco" placeholder="2990">
+                </div>
+                <div class="mb-3">
+                    <label for="estoque" class="form-label">estoque</label>
+                    <input type="text" class="form-control" id="estoque" value="{{produto.estoque}}" name="estoque" placeholder="60">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

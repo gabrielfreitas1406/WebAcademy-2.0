@@ -1,0 +1,34 @@
+{
+  "produtos": [
+    {
+      "id": "85f1",
+      "nome": "Martelo",
+      "preco": 99,
+      "estoque": 90
+    },
+    {
+      "nome": "Samsung Galaxy S99",
+      "preco": "2000",
+      "estoque": "150",
+      "id": "0fbe"
+    },
+    {
+      "id": "3fa0",
+      "nome": "Ar condicionado",
+      "preco": "1999",
+      "estoque": "30"
+    },
+    {
+      "id": "01d6",
+      "nome": "Ar condicionado Window",
+      "preco": "4000",
+      "estoque": "30"
+    },
+    {
+      "id": "e7da",
+      "nome": "A",
+      "preco": "A",
+      "estoque": "A"
+    }
+  ]
+}
